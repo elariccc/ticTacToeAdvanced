@@ -1,0 +1,23 @@
+body {
+  font: 14px "Century Gothic", Futura, sans-serif;
+  margin: 20px;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.game {
+  display: flex;
+  flex-direction: row;
+}
+
+.move--active {
+  font-weight: bold;
+}
+
+.checkbox {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,42 @@
+.board {
+  display: table;
+}
+
+.board__row {
+  display: table-row;
+}
+
+.square {
+  background: #fff;
+  border: 1px solid #999;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 34px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 34px;
+}
+
+.square:focus {
+  outline: none;
+}
+
+.square--active {
+  background-color: antiquewhite;
+}
+
+.square--inactive {
+  background-color: lightgray;
+}
+
+.square--win {
+  background-color: yellowgreen;
+}
+
+.square--placed {
+  background-color: burlywood;
+}
