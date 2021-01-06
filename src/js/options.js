@@ -19,6 +19,10 @@ export default class Options extends React.Component {
       winLength: 3,
       gravity: false,
     };
+
+    this.setNewGameState = this.setNewGameState.bind(this);
+    this.handleToggleGravity = this.handleToggleGravity.bind(this);
+    this.setNewStates = setNewStates.bind(this);
   }
 
   setNewGameState(event) {
@@ -40,32 +44,32 @@ export default class Options extends React.Component {
 
   render() {
     return(
-      <form onSubmit = { this.setNewGameState.bind(this) }>
+      <form onSubmit = { this.setNewGameState }>
         <InputNumber
           min = '2'
           max = '50'
           defaultValue = '3'
-          onChange = { setNewStates.bind(this) }
+          onChange = { this.setNewStates }
           stateKey = 'height'
         >Height of the field</InputNumber>
         <InputNumber
           min = '2'
           max = '50'
           defaultValue = '3'
-          onChange = { setNewStates.bind(this) }
+          onChange = { this.setNewStates }
           stateKey = 'width'
         >Width of the field</InputNumber>
         <InputNumber
           min = '2'
           max = { Math.min(this.state.height, this.state.width) }
           defaultValue = '3'
-          onChange = { setNewStates.bind(this) }
+          onChange = { this.setNewStates }
           stateKey = 'winLength'
         >Length of line to win</InputNumber>
         <InputCheckBox
           id = 'gravity'
           checked = { this.state.gravity }
-          onChange = { this.handleToggleGravity.bind(this) }
+          onChange = { this.handleToggleGravity }
         >Turn on "gravity"?</InputCheckBox>
         <input type = 'submit' value = 'Confirm' />
       </form>

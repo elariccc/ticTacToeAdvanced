@@ -11,6 +11,10 @@ export default class GameContainer extends React.Component {
     this.state = {
       hide: true,
     };
+
+    this.handleClick = this.handleClick.bind(this);
+    this.handleToggleOrder = this.handleToggleOrder.bind(this);
+    this.setNewStates = setNewStates.bind(this);
   }
 
   handleClick(i, j) {
@@ -134,14 +138,14 @@ export default class GameContainer extends React.Component {
             squares = {current.squares}
             width = {this.state.width}
             height = {this.state.height}
-            onSquareClick = { this.handleClick.bind(this) }
+            onSquareClick = { this.handleClick }
             winLine = {winLine}
             gravity = {this.state.gravity}
           />
           <Info
             status = {status}
             ascendingOrder = { this.state.ascendingOrder }
-            onCheckBoxChange = { this.handleToggleOrder.bind(this) }
+            onCheckBoxChange = { this.handleToggleOrder }
             moves = {moves}
           />
         </div>
@@ -152,7 +156,7 @@ export default class GameContainer extends React.Component {
       <div className = "game-container">
         {gameField}
         <Options 
-          onSubmit = { setNewStates.bind(this) }
+          onSubmit = { this.setNewStates }
         />
       </div>
     );
